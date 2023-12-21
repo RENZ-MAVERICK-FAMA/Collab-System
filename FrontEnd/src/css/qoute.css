@@ -1,0 +1,22 @@
+     .quote-box{
+
+width: 600px;
+height: 400px;
+margin-left: 100px;
+margin-top: 30px;
+
+}
+
+.stud_qoute{
+font-size: 60px;
+
+}
+
+.quote_auth{
+float: right;
+font-size: 30px;
+}
+.quote_statement{
+
+font-size: 46px;
+}

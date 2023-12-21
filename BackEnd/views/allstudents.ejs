@@ -1,0 +1,111 @@
+<!-- views/students.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List</title>
+  <style>
+    /* Add your styles for responsiveness or use an external stylesheet */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .actions {
+      text-align: center;
+    }
+
+    .edit,
+    .delete {
+      padding: 5px 10px;
+      margin: 5px;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .edit {
+      background-color: #007bff;
+    }
+
+    .delete {
+      background-color: #e21414;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Student List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>LRN</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.forEach(student => { %>
+        <tr>
+            <td><%= student.lrn %></td>
+          <td><%= student.firstName %> <%= student.lastName %> </td>
+          
+          <td class="actions">
+            <a href="/api/edit-student/<%= student._id %>" class="edit">Edit</a>
+              <br>
+              <br>
+              <form id="deleteForm" method="POST" action="/api/delete-student/<%= student._id %>" onsubmit="return confirmDelete()">
+                <button type="submit" class="delete">Delete</button>
+              </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <script>
+    function confirmDelete() {
+      return confirm('Are you sure you want to delete?');
+    }
+  
+    // Attach an event listener to the form submission
+    document.getElementById('deleteForm').addEventListener('submit', function (event) {
+      if (!confirmDelete()) {
+        // If the user clicks "Cancel," prevent the form submission
+        event.preventDefault();
+      } else {
+        // If the user clicks "OK," reload the page after a short delay
+        setTimeout(function () {
+          location.reload();
+        }, 100);
+      }
+    });
+  </script>
+</body>
+
+</html>

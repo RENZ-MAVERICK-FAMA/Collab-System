@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+max-width: 600px;
+width: 80%;
+margin: 20px auto;
+padding: 30px; /* Increase the padding to make the form bigger vertically */
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+select {
+    width: calc(50% - 20px); /* Adjusted width to make room for both fields side by side */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+input[type="checkbox"] {
+    width: 20px; /* Adjusted width for checkbox */
+    margin-right: 5px;
+    display: inline-block;
+}
+
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
