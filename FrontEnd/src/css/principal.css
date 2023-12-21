@@ -1,0 +1,267 @@
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}  
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+  
+  /* Style for the modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+  
+  /* Close button style */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.content {
+    text-align: left;
+    margin-left: 270px;
+    color:  #fff ;
+}
+  
+.content > img {
+    border-radius: 50%; 
+    margin-left: 19px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover; 
+    object-position: center;
+   
+}
+  
+  /* EJS NAV CSS*/
+.nav_stud_name{
+    font-size: 13px;
+    margin: 0px;
+    margin-left: 80px;
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+}
+  
+.welcome{
+    font-size: 30px;
+  
+}
+  
+.pic_user_nav{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    margin: 0px;
+    margin-left: 900px;
+    cursor: pointer;
+
+}
+  
+  table {
+    width: 600px;
+    height: 350px;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  
+}
+  
+  
+.weather-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+}
+   
+.weather-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+   
+.weather-description {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+   
+.temperature {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.edit{
+  
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  
+  
+}
+
+.delete-container {
+    display: flex;
+    justify-content: flex-end; 
+}
+  
+.delete {
+    padding: 4px 8px;
+    background-color: #e21414;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: -410px; 
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;
+  
+}
+
+.center1{
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+  
+}
+
+.teacher-name{
+  
+    margin-left:-200px; 
+}
+
+.section-name{
+  
+    margin-left: -120px;
+       
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #7ABABA;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: left 0.5s ease;
+}
+  
+.sidebar a {
+    padding: 10px 8px   ;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    display: block;       
+    transition: color 0.3s;
+}
+  
+.sidebar a:hover {
+    color: #000;
+}
+ 
+.burger-btn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    transition: left 0.5s ease;
+}
+
+.chat{
+    margin-left: 463px;
+    margin-top: -20px;
+}
+
+.buttonside{
+     display: inline-block;
+    padding: 5px 8px;
+    max-width: 60%;
+    background-color: #00808080;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+     align-items: center;
+    margin-left: 50px;
+    text-align: center;
+}
+         
+.buttonside:hover{
+ font-size: 18px; 
+}
+
+.line{
+  
+    height: 550px;
+    width:  730px;
+    background-color:#7ABABA;
+    z-index: 1;
+    margin-left: -259px;
+         
+  
+}
+
+.modaltext{
+  
+    text-align:left;
+    margin-left: 270px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modaltext strong {
+    display: inline-block;
+    width: 150px;
+    margin-left: -60px; 
+}
+
+.modaltext {
+    padding-left: 20px; 
+      }

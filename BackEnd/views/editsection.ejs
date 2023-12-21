@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Section</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+        }   
+h1 {
+    text-align: center;
+    color: #333;
+    order: -1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    display: flex; 
+    align-items: center; 
+   
+}
+
+input[type="text"],
+select {
+    width: calc(50% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle; 
+   
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+    </style>
+</head>
+
+<body>
+    <% if (messages.success) { %>
+        <div class="alert alert-success">
+          <%= messages.success %>
+        </div>
+      <% } %>
+      
+      <% if (messages.error) { %>
+        <div class="alert alert-danger">
+          <%= messages.error %>
+        </div>
+      <% } %>
+    <h1>Edit Section</h1>
+    <form action="/api/edit-section/<%= section._id %>" method="post">
+        <label for="name">Section Name:</label>
+        <input type="text" id="name" name="name" value="<%= section.name %>" placeholder="<%= section.name %>" required><br><br>
+
+        <label for="teacher">Select Teacher:</label>
+        <select id="teacher" name="teacher">
+            <% if (allTeachers && allTeachers.length > 0) { %>
+                <% allTeachers.forEach(function(teacher) { %>
+                    <option value="<%= teacher._id %>" <% if (section.teacher && section.teacher.toString() === teacher._id.toString()) { %>selected<% } %>>
+                        <%= teacher.firstName %> <%= teacher.lastName %>
+                    </option>
+                <% }); %>
+            <% } else { %>
+                <option value="" disabled>No teachers available</option>
+            <% } %>
+        </select><br><br>
+        <% function isStudentInSection(student, sectionStudents) { %>
+            <% return sectionStudents.some(sectionStudent => sectionStudent._id.toString() === student._id.toString()); %>
+        <% } %>
+
+        <% if (allStudents && allStudents.length > 0) { %>
+            <h3>All Students in this section:</h3>
+            <ul>
+                <% allStudents.forEach(function(student) { %>
+                    <li>
+                        <input type="checkbox" name="students" value="<%= student._id %>" <% if (isStudentInSection(student, section.students)) { %>checked<% } %>>
+                        <label> <%= student.firstName %> <%= student.lastName %></label>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No students available.</p>
+        <% } %>
+
+        <input type="submit" value="Update Section">
+    </form>
+
+</body>
+
+</html>
